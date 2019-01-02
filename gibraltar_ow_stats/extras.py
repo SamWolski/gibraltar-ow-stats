@@ -13,14 +13,16 @@ def verify_working_dir(working_dir=DEFAULT_WORKING_DIR):
 	'''
 	Verify that the working directory exists, and create it if it doesn't.
 
-	Return value indicates whether or not directory existed before this
-	function was called.
+	Return value is the (expanded) path to the working directory.
 	'''
 	## Expand path
 	working_dir = os.path.expanduser(working_dir)
 	## Check for existence and create
-	if not os.path.exists(working_dir):
-		os.makedirs(working_dir, exist_ok=True)
-		return False
-	else:
-		return True
+	os.makedirs(working_dir, exist_ok=True)
+	## Create additional required subdirs
+	data_dir = os.path.join(working_dir, 'data')
+	os.makedirs(data_dir, exist_ok=True)
+	analysis_dir = os.path.join(working_dir, 'analysis')
+	os.makedirs(analysis_dir, exist_ok=True)
+	## Return working_dir path
+	return working_dir

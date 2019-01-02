@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 from gibraltar_ow_stats._config import config
 
-__version__ = '0.1.dev10'
+__version__ = '0.1.dev11'
 
 from gibraltar_ow_stats.DataPuller import DataPuller
 from gibraltar_ow_stats.extras import verify_working_dir
