@@ -8,7 +8,7 @@ import urllib.request
 import json
 from datetime import datetime
 
-from ._config import config
+from gibraltar_ow_stats._config import config
 
 logger = logging.getLogger('gibraltar_ow_stats.DataPuller')
 

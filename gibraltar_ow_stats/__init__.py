@@ -11,13 +11,13 @@ import os
 import logging
 import logging.config
 
-from ._logging_conf import LOGGING_CONF
+from gibraltar_ow_stats._logging_conf import LOGGING_CONF
 
 logging.config.dictConfig(LOGGING_CONF)
 logger = logging.getLogger(__name__)
 
-from ._config import config
+from gibraltar_ow_stats._config import config
 
-__version__ = '0.1.dev8'
+__version__ = '0.1.dev9'
 
-from .DataPuller import DataPuller
+from gibraltar_ow_stats.DataPuller import DataPuller
