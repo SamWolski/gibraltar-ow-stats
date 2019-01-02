@@ -18,4 +18,6 @@ logger = logging.getLogger(__name__)
 
 from ._config import config
 
-__version__ = '0.1.dev3'
+__version__ = '0.1.dev4'
+
+from DataPuller import DataPuller
