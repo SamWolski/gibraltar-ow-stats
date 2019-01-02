@@ -6,6 +6,7 @@ storing it locally.
 import logging
 import urllib.request
 import json
+from datetime import datetime
 
 from ._config import config
 
@@ -33,6 +34,16 @@ class DataPuller:
 		username = self.battletag+'-'+str(self.battletag_ID)
 		## Generate target url based on config
 		target_url = config.get('api', 'url').format(region=self.region, username=username)
-		self.logger.info('Fetching data from {}'.format(target_url))
-		## Fetch data
+		self.logger.info('Fetching data from {}...'.format(target_url))
+		## Fetch data and save timestamp
 		self.fetched_data = json.loads(urllib.request.urlopen(target_url).read())
+		self.fetched_time = datetime.now()
+		self.logger.info('Data fetched at {:%y-%m-%d %H:%M:%S}'\
+													.format(self.fetched_time))
+
+	def write_data(self):
+		'''
+		Write the currently-stored data to JSON.
+		'''
+		## Generate output file name based on current date and time
+		pass
