@@ -5,6 +5,7 @@ storing it locally.
 
 import logging
 import urllib.request
+import json
 
 from ._config import config
 
@@ -29,4 +30,4 @@ class DataPuller:
 		target_url = config.get('api', 'url').format(region=region, username=username)
 		self.logger.info('Fetching data from {}'.format(target_url))
 		## Fetch data
-		self.fetched_data = urllib.request.urlopen(target_url).read()
+		self.fetched_data = json.loads(urllib.request.urlopen(target_url).read())
