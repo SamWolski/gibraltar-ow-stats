@@ -12,12 +12,6 @@ DEFAULT_CONFIG_DICT = {
 	'localfiles': {
 		'working_dir': '~/gibraltar-ow-stats/',
 	},
-	'userprofile': {
-		'battletag': 'Surefour',
-		'battletag_id': 2559,
-		'platform': 'pc',
-		'region': 'us',
-	},
 	'api': {
 		'url': 'https://ovrstat.com/stats/pc/{region}/{username}',
 	},
