@@ -3,8 +3,7 @@ Config parameters for Gibraltar.
 '''
 
 import os
-import ConfigParser
-import io
+import configparser
 import logging
 
 logger = logging.getLogger('gibraltar_ow_stats._config')
@@ -27,7 +26,7 @@ DEFAULT_CONFIG_DICT = {
 DEFAULT_CONFIG_PATH = os.path.expanduser('~/.config/gibraltar-ow-stats/gibraltar.ini')
 
 def generate_new_config(config_dict=DEFAULT_CONFIG_DICT):
-	new_config = ConfigParser.ConfigParser()
+	new_config = configparser.ConfigParser()
 	for section, section_values in config_dict.items():
 		new_config.add_section(section)
 		for key, value in section_values.items():
@@ -45,8 +44,8 @@ def read_config(config_path):
 	return config_data
 
 def parse_config(config_data):
-	config = ConfigParser.RawConfigParser(allow_no_value=True)
-	config.readfp(io.BytesIO(config_data))
+	config = configparser.ConfigParser(allow_no_value=True)
+	config.read_string(config_data)
 	return config
 
 def get_config(config_path):

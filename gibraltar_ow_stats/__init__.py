@@ -11,13 +11,13 @@ import os
 import logging
 import logging.config
 
-from _logging_conf import LOGGING_CONF
+from ._logging_conf import LOGGING_CONF
 
 logging.config.dictConfig(LOGGING_CONF)
 logger = logging.getLogger(__name__)
 
 from ._config import config
 
-__version__ = '0.1.dev4'
+__version__ = '0.1.dev5'
 
-from DataPuller import DataPuller
+from .DataPuller import DataPuller

@@ -5,7 +5,7 @@ storing it locally.
 
 import logging
 
-from _config import config
+from ._config import config
 
 logger = logging.getLogger('gibraltar_ow_stats.DataPuller')
 
